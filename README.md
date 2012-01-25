@@ -1,7 +1,7 @@
 Static Site Starter
 ===================
 
-A skeleton for quickly starting a new static site. It is built on HTML5 Boilerplate and Jekyll and includes Sass and Bourbon to facilitate easy and rapid development.
+A skeleton for quickly starting a new static site. It's built on Jekyll and includes parts of HTML5 Boilerplate, plus Sass and Bourbon to facilitate easy and rapid development.
 
 _If you're thinking "Hey, there used to be a lot more stuff in this" then you're probably looking for the [Static Prototyping Framework] (https://github.com/javasteve99/static-prototyping-framework) instead. This grew beyond it's original purpose pretty quickly, so I split the project._
 
