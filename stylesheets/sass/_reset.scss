@@ -1,57 +1,75 @@
-/* Reset ==== Bootstrap v1.4.0 - http://twitter.github.com/bootstrap/ */
-/* Adapted version of Eric Meyer's reset */
+/* ==========================================================================
+Reset adapted from Twitter Bootstrap
+https://github.com/twitter/bootstrap/
+========================================================================== */
 
 html, body {
   margin: 0;
   padding: 0;
 }
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 100%;
-  line-height: 1;
-  font-family: inherit;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-ol, ul {
-  list-style: none;
-}
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-}
-html {
-  overflow-y: scroll;
-  font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-a:focus {
-  outline: thin dotted;
-}
-a:hover, a:active {
-  outline: 0;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+
+// Display in IE6-9 and FF3
+// -------------------------
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
   display: block;
 }
-audio, canvas, video {
+
+// Display block in IE6-9 and FF3
+// -------------------------
+
+audio,
+canvas,
+video {
   @include inline-block();
   *display: inline;
   *zoom: 1;
 }
+
+// Prevents modern browsers from displaying 'audio' without controls
+// -------------------------
+
 audio:not([controls]) {
-  display: none;
+    display: none;
 }
-sub, sup {
+
+// Base settings
+// -------------------------
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+// Focus states
+a:focus {
+  outline: thin dotted $grayDark;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+// Hover & Active
+a:hover,
+a:active {
+  outline: 0;
+}
+
+// Prevents sub and sup affecting line-height in all browsers
+// -------------------------
+
+sub,
+sup {
+  position: relative;
   font-size: 75%;
   line-height: 0;
-  position: relative;
   vertical-align: baseline;
 }
 sup {
@@ -60,39 +78,58 @@ sup {
 sub {
   bottom: -0.25em;
 }
+
+// Img border in a's and image quality
+// -------------------------
+
 img {
+  max-width: 100%;
+  height: auto;
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
-button, input, select, textarea {
-  font-size: 100%;
+
+// Forms
+// -------------------------
+
+// Font size in all browsers, margin changes, misc consistency
+button,
+input,
+select,
+textarea {
   margin: 0;
-  vertical-align: baseline;
-  *vertical-align: middle;
+  font-size: 100%;
+  vertical-align: middle;
 }
-button, input {
-  line-height: normal;
-  *overflow: visible;
+button,
+input {
+  *overflow: visible; // Inner spacing ie IE6/7
+  line-height: normal; // FF3/4 have !important on line-height in UA stylesheet
 }
-button::-moz-focus-inner, input::-moz-focus-inner {
-  border: 0;
+button::-moz-focus-inner,
+input::-moz-focus-inner { // Inner padding and border oddities in FF3/4
   padding: 0;
+  border: 0;
 }
-button, input[type="button"], input[type="reset"], input[type="submit"] {
-  cursor: pointer;
-  -webkit-appearance: button;
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer; // Cursors on all buttons applied consistently
+  -webkit-appearance: button; // Style clickable inputs in iOS
 }
-input[type="search"] {
+input[type="search"] { // Appearance in Safari/Chrome
   -webkit-appearance: textfield;
   -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
 }
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none; // Inner-padding issues in Chrome OSX, Safari 5
 }
 textarea {
-  overflow: auto;
-  vertical-align: top;
+  overflow: auto; // Remove vertical scrollbar in IE6-9
+  vertical-align: top; // Readability and alignment cross-browser
 }
 
