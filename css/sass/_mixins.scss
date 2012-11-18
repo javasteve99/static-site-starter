@@ -1,34 +1,45 @@
 // Global Mixins ================================================================================= /
-@mixin button {
-  background: $primary;
-  border: none;
-  @include border-radius(2px);
-  @include box-shadow(0 1px 4px rgba($darkest, 0.3));
-  color: $lightest;
-  display: block;
-  font-size: #{$modular-scale-up1}em;
-  height: #{$vertical-measure}em;
-  line-height: $base-line-height;
-  margin-right: 1em;
-  padding: 0 0.5em;
-  text-shadow: 0px 1px darken($primary, 20%);
-  text-decoration: none;
-  @include transition(background-color, .25s);
 
-  &:hover {
-    background: lighten($primary, 10%);
-    @include box-shadow(0 2px 4px rgba($darkest, 0.3));
-    @include transform(translate3d(0px, -1px, 0px));
-  }
-
-  &:active {
-    @include box-shadow(0 1px 4px rgba($darkest, 0.3));
-    @include transform(translate3d(0px, 0px, 0px));
-  }
-}
-
+// Micro-clearfix hack, also part of Bourbon
 @mixin clearfix {
   zoom: 1;
   &:before, &:after { content: ""; display: table; }
   &:after { clear: both; }
+}
+
+// Opacity, extend to IE
+@mixin opacity ($value) {
+  opacity: $value;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=($value * 100))"; // IE8
+  filter: alpha(opacity=($value * 100)); // IE5-7
+  zoom: 1; // hacks IE requirement that element be positioned
+}
+
+/* Helper classes =============================================================================== */
+
+// Hide from screenreaders and browsers
+.hide {
+  display: none !important;
+  visibility: hidden;
+}
+
+.show {
+  display: block !important;
+}
+
+// Hide only visually, but have it available for screenreaders
+.visually-hide {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Hide visually and from screenreaders, but maintain layout
+.invisible {
+  visibility: hidden;
 }

@@ -2,15 +2,13 @@
 
 html { -webkit-font-smoothing: antialiased; }
 
-@mixin body-font-styles { // keep body specific type styles in the type stylesheep
-  color: $text;
+@mixin body-font-styles { // keep body specific type styles in the type stylesheet
+  color: $base-font-color;
   font-family: $base-font-family;
   font-size: 100%;
   line-height: $base-line-height;
   font-style: normal;
   font-weight: normal;
-  font-weight: 400;
-  text-shadow: 0 1px 1px $text-shadow;
 }
 
 p {
@@ -23,27 +21,13 @@ strong { font-weight: bold; }
 em { font-style: italic; }
 cite { font-style: normal; }
 
-a {
-  color: $primary;
-  font-weight: bold;
-  text-decoration: none;
-  border-bottom: 1px solid rgba($primary, 0.25);
-  @include transition(border, .25s);
-
-  &:hover {
-    text-decoration: none;
-    border-bottom: 1px solid $primary;
-  }
-}
-
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   font-family: $heading-font-family;
   font-weight: bold;
-  font-weight: 700;
   line-height: 1;
-  color: $primary;
+  color: $heading-font-color;
   text-rendering: optimizelegibility; // Fix the character spacing for headings
 }
 
@@ -52,41 +36,30 @@ h1 {
   margin-bottom: #{$vertical-measure / $modular-scale-up4}em;
 }
 
-h2, h1.title {
+h2 {
   font-size: #{$modular-scale-up3}em;
   margin-bottom: #{$vertical-measure / $modular-scale-up3}em;
 }
 
-h1.title { margin-bottom: 0; }
-
-h2.subhead {
-  margin-bottom: #{$vertical-measure}em;
-  width: 75%;
-}
-
 h3 {
   font-size: #{$modular-scale-up2}em;
-  margin: -0.2em 0 0.075em 0;
+  margin-bottom: #{$vertical-measure / $modular-scale-up2}em;
 }
 
 h4 {
-  color: $darkest;
   font-size: #{$modular-scale-up1}em;
-  margin: -0.15em 0 0.15em 0;
+  margin-bottom: #{$vertical-measure / $modular-scale-up1}em;
 }
 
-h5, h2.subhead {
-  color: $darkest;
+h5 {
   font-size: #{$modular-scale-base}em;
-  line-height: $base-line-height;
-  margin-bottom: 0;
+  margin-bottom: #{$vertical-measure}em;
 }
 
 h6 {
-  color: lighten($darkest, 25%);
-  font-size: #{$modular-scale-down1}em;
-  line-height: $base-line-height;
-  margin-bottom: 0;
+  font-size: #{$modular-scale-base}em;
+  margin-bottom: #{$vertical-measure}em;
+  color: lighten($heading-font-color, 25%);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -110,7 +83,7 @@ li {
 hr {
   margin: 0 0 #{$vertical-measure}em 0;
   border: 0;
-  border-top: 1px solid $primary;
+  border-top: 1px solid $darkest;
   border-bottom: 1px solid $lightest;
 }
 
@@ -120,7 +93,7 @@ abbr[title] {
 }
 
 blockquote {
-  color: lighten($text, 25%);
+  color: lighten($base-font-color, 25%);
   padding-left: 1em;
   margin: 0 0 #{$vertical-measure}em 0;
   border-left: 0.25em solid $primary;
@@ -143,13 +116,4 @@ q:after,
 blockquote:before,
 blockquote:after {
   content: "";
-}
-
-@media screen and (max-width: 24em) {
-  h1, h2, h1.title { font-size: #{$modular-scale-up2}em; }
-  h3, h5, h2.subhead { font-size: #{$modular-scale-up1}em; }
-  h4 { font-size: $base-font-size; }
-  h5, h2.subhead, h6 { font-size: #{$modular-scale-down2}em; width: 100%; }
-  p, ul, ol { font-size: #{$modular-scale-down1}em; line-height: $base-line-height; margin: 0 0 #{$vertical-measure}em 0; }
-  li { font-size: #{$modular-scale-down1}em; line-height: 1; margin-bottom: 0.4375em; }
 }

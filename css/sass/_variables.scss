@@ -1,6 +1,6 @@
 // Variables ===================================================================================== /
 
-// White - Grays - Black
+// white - grays - black
 $black:             hsl(0, 0%, 0%);
 $gray90:            hsl(0, 0%, 10%);
 $gray80:            hsl(0, 0%, 20%);
@@ -13,34 +13,20 @@ $gray20:            hsl(0, 0%, 80%);
 $gray10:            hsl(0, 0%, 90%);
 $white:             hsl(0, 0%, 100%);
 
-// Solarized colors for code blocks
-$sol-darkest-bg:      #002b36; // base03
-$sol-dark-bg:         #073642; // base02
-$sol-darkest-text:    #586e75; // base01
-$sol-dark-text:       #657b83; // base00
-$sol-light-text:      #839496; // base0
-$sol-lightest-text:   #93a1a1; // base1
-$sol-light-bg:        #eee8d5; // base2
-$sol-lightest-bg:     #fdf6e3; // base3
-$sol-yellow:          #b58900;
-$sol-orange:          #cb4b16;
-$sol-red:             #dc322f;
-$sol-magenta:         #d33682;
-$sol-violet:          #6c71c4;
-$sol-blue:            #268bd2;
-$sol-cyan:            #2aa198;
-$sol-green:           #859900;
+// accent colors
+$blue:              #049cdb;
+$blueDark:          #0064cd;
+$green:             #46a546;
+$red:               #9d261d;
+$yellow:            #ffc40d;
+$orange:            #f89406;
+$pink:              #c3325f;
+$purple:            #7a43b6;
 
-// Accent colors
-$blue:                #14517d;
-
-// Color scheme
-$primary:             $blue;
-$text-shadow:         $white;
-$lightest:            $white;
-$darkest:             $black;
-$background:          $gray10;
-$text:                $gray80;
+// color scheme
+$primary:           $blue;
+$lightest:          $white;
+$darkest:           $gray80;
 
 // Modular Scale : 16 @ 1.618 and 23 @ 1.618
 $modular-scale-up5:   3.75;   // 60px
@@ -53,15 +39,17 @@ $modular-scale-down1: 0.875;  // 14px
 $modular-scale-down2: 0.625;  // 10px
 
 // Type Variables
-$base-font-family:    "source-sans-pro", source-sans-pro, sans-serif;
-$heading-font-family: "source-sans-pro", source-sans-pro, sans-serif;
-$code-font-family:    "source-code-pro", source-code-pro, sans-serif;
+$base-font-family:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+$heading-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$code-font-family:    Menlo, Monaco, "Courier New", monospace;
 $base-font-size:      #{$modular-scale-base}em;
 $base-line-height:    $modular-scale-up1;
 $vertical-measure:    $modular-scale-up1;
+$base-font-color:     $darkest;
+$heading-font-color:  $darkest;
 
 // Grid function variables (not yet in use)
-$max-width:           39.5em;
-$column-width:        32%;
-$gutter-width:        2%;
-$maximum-columns:     3;
+$max-width:           1000px;
+$column-width:        150px;
+$gutter-width:        20px;
+$maximum-columns:     6;
