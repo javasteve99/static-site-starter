@@ -1,0 +1,67 @@
+// Variables ===================================================================================== /
+
+// White - Grays - Black
+$black:             hsl(0, 0%, 0%);
+$gray90:            hsl(0, 0%, 10%);
+$gray80:            hsl(0, 0%, 20%);
+$gray70:            hsl(0, 0%, 30%);
+$gray60:            hsl(0, 0%, 40%);
+$gray50:            hsl(0, 0%, 50%);
+$gray40:            hsl(0, 0%, 60%);
+$gray30:            hsl(0, 0%, 70%);
+$gray20:            hsl(0, 0%, 80%);
+$gray10:            hsl(0, 0%, 90%);
+$white:             hsl(0, 0%, 100%);
+
+// Solarized colors for code blocks
+$sol-darkest-bg:      #002b36; // base03
+$sol-dark-bg:         #073642; // base02
+$sol-darkest-text:    #586e75; // base01
+$sol-dark-text:       #657b83; // base00
+$sol-light-text:      #839496; // base0
+$sol-lightest-text:   #93a1a1; // base1
+$sol-light-bg:        #eee8d5; // base2
+$sol-lightest-bg:     #fdf6e3; // base3
+$sol-yellow:          #b58900;
+$sol-orange:          #cb4b16;
+$sol-red:             #dc322f;
+$sol-magenta:         #d33682;
+$sol-violet:          #6c71c4;
+$sol-blue:            #268bd2;
+$sol-cyan:            #2aa198;
+$sol-green:           #859900;
+
+// Accent colors
+$blue:                #14517d;
+
+// Color scheme
+$primary:             $blue;
+$text-shadow:         $white;
+$lightest:            $white;
+$darkest:             $black;
+$background:          $gray10;
+$text:                $gray80;
+
+// Modular Scale : 16 @ 1.618 and 23 @ 1.618
+$modular-scale-up5:   3.75;   // 60px
+$modular-scale-up4:   2.625;  // 42px
+$modular-scale-up3:   2.3125; // 37px
+$modular-scale-up2:   1.625;  // 26px
+$modular-scale-up1:   1.4375; // 22px
+$modular-scale-base:  1;      // 16px
+$modular-scale-down1: 0.875;  // 14px
+$modular-scale-down2: 0.625;  // 10px
+
+// Type Variables
+$base-font-family:    "source-sans-pro", source-sans-pro, sans-serif;
+$heading-font-family: "source-sans-pro", source-sans-pro, sans-serif;
+$code-font-family:    "source-code-pro", source-code-pro, sans-serif;
+$base-font-size:      #{$modular-scale-base}em;
+$base-line-height:    $modular-scale-up1;
+$vertical-measure:    $modular-scale-up1;
+
+// Grid function variables (not yet in use)
+$max-width:           39.5em;
+$column-width:        32%;
+$gutter-width:        2%;
+$maximum-columns:     3;

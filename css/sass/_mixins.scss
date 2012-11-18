@@ -1,0 +1,34 @@
+// Global Mixins ================================================================================= /
+@mixin button {
+  background: $primary;
+  border: none;
+  @include border-radius(2px);
+  @include box-shadow(0 1px 4px rgba($darkest, 0.3));
+  color: $lightest;
+  display: block;
+  font-size: #{$modular-scale-up1}em;
+  height: #{$vertical-measure}em;
+  line-height: $base-line-height;
+  margin-right: 1em;
+  padding: 0 0.5em;
+  text-shadow: 0px 1px darken($primary, 20%);
+  text-decoration: none;
+  @include transition(background-color, .25s);
+
+  &:hover {
+    background: lighten($primary, 10%);
+    @include box-shadow(0 2px 4px rgba($darkest, 0.3));
+    @include transform(translate3d(0px, -1px, 0px));
+  }
+
+  &:active {
+    @include box-shadow(0 1px 4px rgba($darkest, 0.3));
+    @include transform(translate3d(0px, 0px, 0px));
+  }
+}
+
+@mixin clearfix {
+  zoom: 1;
+  &:before, &:after { content: ""; display: table; }
+  &:after { clear: both; }
+}

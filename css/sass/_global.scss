@@ -1,0 +1,267 @@
+/* Global Styles ================================================================================ */
+html { margin: 0; padding: 0; width: 100%; }
+body { background: $background; margin: 0; padding: 0; @include body-font-styles; width: 100%; }
+.container { width: 100%; max-width: $max-width; margin: 0 auto; padding: 0; }
+
+[role="main"] {
+  margin: 0 auto;
+  padding: 5em 1em 3em 1em; // 80px 16px 48px 16px
+
+  *:first-child { margin-top: 0; }
+
+  img {
+    @include border-radius(2px);
+    @include box-shadow(0 1px 4px rgba($darkest, 0.3));
+    margin-bottom: 0.5em; // 8px
+    max-width: 100%;
+  }
+}
+
+ul.descriptions {
+  list-style-type: none;
+  margin-left: 0;
+
+  li {
+    padding: 0.9375em 0 1.9375em 0;
+    position: relative;
+    border-bottom: 1px solid rgba($primary, 0.25);
+    border-top: 1px solid rgba($lightest, 0.5);
+    margin: 0;
+    &:first-child { border-top: none; padding-top: 0;
+      .date { top: 0.4em; }
+    }
+    &:last-child{ border-bottom: none; padding-bottom: 0; }
+  }
+
+  h1.title {
+    font-size: #{$modular-scale-up2}em;
+    margin-bottom: #{$vertical-measure / 4}em;
+  }
+
+  h2.subhead {
+    font-size: #{$modular-scale-down1}em;
+    margin-bottom: 0;
+  }
+
+  p { margin-bottom: 0; }
+
+  .date { top: 1.3em; }
+}
+
+@media screen and (max-width: 27em) {
+  [role="main"] { background: none; padding: 1em; }
+  ul.descriptions li { padding-bottom: 0.96875em; }
+}
+
+/* Header ======================================================================================= */
+[role="banner"] {
+  background: $primary;
+  @include box-sizing(border-box);
+  padding: 1em 0;
+}
+
+.logo {
+  font-size: #{$modular-scale-up5}em;
+  margin: 0;
+  padding: 0 0.234375em;
+
+  & a {
+    color: $lightest;
+    margin: 0 !important;
+    text-decoration: none;
+    text-shadow: 0 1px 0 darken($primary, 20%);
+
+    &:hover {
+      text-shadow: 0 2px 0 darken($primary, 20%);
+      text-decoration: none;
+      @include transform(translate3d(0px, -1px, 0px));
+    }
+
+    &:active {
+      text-shadow: 0 1px 0 darken($primary, 20%);
+      text-decoration: none;
+      @include transform(translate3d(0px, 0px, 0px));
+    }
+  }
+}
+
+nav.global {
+  @include clearfix;
+  display: block;
+  margin: 1em 0 0 0;
+  padding: 0 1em;
+
+  a {
+    @include border-radius(2px);
+    color: $lightest;
+    display: block;
+    float: left;
+    height: #{$vertical-measure}em;
+    line-height: $base-line-height;
+    margin-right: 1em;
+    padding: 0 0.5em;
+    text-decoration: none;
+    text-shadow: 0 1px 0 darken($primary, 20%);
+    @include transition(background-color, .25s);
+
+    &:hover {
+      background: lighten($primary, 10%);
+      @include box-shadow(inset 0 1px 0 0 darken($primary, 20%));
+    }
+
+    &:active {
+      @include box-shadow(inset 0 2px 1px 0 darken($primary, 20%));
+    }
+  }
+
+  a:first-child { margin-left: -0.5em; }
+}
+
+body.portfolio a.portfolio-nav,
+body.experience a.experience-nav,
+body.blog a.blog-nav,
+body.links a.links-nav {
+  background: lighten($primary, 6%);
+  @include box-shadow(inset 0 1px 0 0 darken($primary, 20%));
+
+  &:hover {
+    background: lighten($primary, 10%);
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  [role="banner"] .logo { font-size: #{$modular-scale-up4}em; }
+  nav.global { padding: 0 0.618em; }
+  nav.global a { padding: 0 0.25em; }
+  nav.global a:first-child { margin-left: -0.25em; }
+}
+
+@media screen and (max-width: 27em) {
+  [role="banner"] .logo { font-size: #{$modular-scale-up3}em; }
+}
+
+@media screen and (max-width: 24em) {
+  [role="banner"] { padding: 0.5em 0.618em; }
+  [role="banner"] .logo { font-size: #{$modular-scale-up2}em; }
+  nav.global { padding: 0 0.382em; margin-top: 0.5em; }
+}
+
+/* Home Page ==================================================================================== */
+body.home [role="main"] {
+  background: url('/img/home-page-bg.png') no-repeat 96% 1.5em;
+  padding-top: 17.25em; // $vertical-measure * 11
+  padding-bottom: 4.3125em; // $vertical-measure * 4
+}
+
+.supporting-links {
+  list-style-type: none;
+  margin-left: 0;
+
+  li a {
+    @include button;
+    float: left;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 32em) {
+  .supporting-links li a { font-size: $base-font-size; padding: 0.25em 1em; }
+}
+
+@media screen and (max-width: 27em) {
+  body.home [role="main"] { background: none; padding: 1em; }
+  .supporting-links li a { float: none; margin: 0 0 0.5em 0; }
+}
+
+/* Experience =================================================================================== */
+body.experience {
+
+  section.employment h3 {
+    margin-bottom: 0.85em;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
+}
+
+/* Portfolio Page =============================================================================== */
+body.portfolio {
+
+  h1.title { margin-bottom: 0.45em; }
+
+  figure {
+    margin-bottom: #{$vertical-measure}em;
+    img { margin-bottom: 0; }
+    figcaption { font-size: #{$modular-scale-down1}em; }
+  }
+}
+
+ul.portfolio-links {
+  list-style-type: none;
+  margin: 0;
+
+  a {
+    @include button;
+    @include box-sizing(border-box);
+    border: 0.25em solid transparent;
+    height: auto;
+    margin: 0 0 #{$vertical-measure / 2}em 0;
+    padding: 0;
+
+    img {
+      @include border-radius(1px);
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 27em) {
+  ul.portfolio-links a img { margin-bottom: -0.5em; }
+  ul.portfolio-links a span { font-size: #{$modular-scale-down2}em; line-height: 1; }
+}
+
+/* Blog styles =============================================================================== */
+body.blog {
+
+  article { position: relative; } // position the date relative to article element
+
+  .date {
+    opacity: 0.2;
+    position: absolute;
+    right: 0;
+    top: 0.9em;
+    @include transition(opacity, .25s);
+
+    &:hover { opacity: 1; }
+  }
+}
+
+@media screen and (max-width: 27em) {
+  body.blog article .date { position: static; }
+}
+/* Secret gifs @ http://stevehickeydesign.com/gifs - good find bro! ============================= */
+figure.gif {
+  margin: 0 0 #{$vertical-measure * 2}em 0;
+  padding: 0;
+  width: 100%;
+
+  img {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+}
+
+/* Footer ======================================================================================= */
+[role="contentinfo"] {
+  border-top: 1px solid $primary;
+  color: $gray50;
+  font-size: #{$modular-scale-down1}em;
+  margin-bottom: 0.5em;
+  padding: 0.25em 1em;
+  text-align: center;
+}

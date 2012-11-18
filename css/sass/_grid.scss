@@ -1,0 +1,55 @@
+// flexible grid functions modified from Bourbon by thoughtbot, inc ============================== /
+
+@function columns($columns, $container-columns: $maximum-columns) {
+  $width: $columns * $column-width + ($columns - 1) * $gutter-width;
+  $container-width: $container-columns * $column-width + ($container-columns - 1) * $gutter-width;
+  @return percentage($width / $container-width);
+}
+
+@function gutter($container-columns: $maximum-columns, $gutter: $gutter-width) {
+  $container-width: $container-columns * $column-width + ($container-columns - 1) * $gutter-width;
+  @return percentage($gutter / $container-width);
+}
+
+// row mixin includes clearfix hack, last-child margin fix and any global row styles ============= /
+@mixin row {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  @include clearfix;
+  @include nesting;
+}
+
+// target nested elements with grid styles. use in global styles as well as row mixin ============ /
+@mixin nesting {
+  padding: 0;
+
+  & > div {
+    float: left;
+    margin-right: gutter();
+    @include border-box;
+  }
+}
+
+// calculate offset amounts for offset columns =================================================== /
+@function offset-columns($columns) {
+  $margin: $columns * $column-width + $columns * $gutter-width;
+  @return $margin;
+}
+
+@mixin offset($from-direction, $columns) {
+  @if $from-direction == left {
+    float: left;
+    margin-left: offset-columns($columns);
+  }
+  @if $from-direction == right {
+    float: right;
+    margin-right: offset-columns($columns);
+  }
+}
+
+// remove margin-right from last element in a row or container so all columns fit ================ /
+@mixin last {
+  margin-right: 0;
+  float: right;
+}

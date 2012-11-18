@@ -1,0 +1,155 @@
+/* Type Styles ================================================================================== */
+
+html { -webkit-font-smoothing: antialiased; }
+
+@mixin body-font-styles { // keep body specific type styles in the type stylesheep
+  color: $text;
+  font-family: $base-font-family;
+  font-size: 100%;
+  line-height: $base-line-height;
+  font-style: normal;
+  font-weight: normal;
+  font-weight: 400;
+  text-shadow: 0 1px 1px $text-shadow;
+}
+
+p {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  margin: 0 0 #{$vertical-measure}em 0;
+}
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+cite { font-style: normal; }
+
+a {
+  color: $primary;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid rgba($primary, 0.25);
+  @include transition(border, .25s);
+
+  &:hover {
+    text-decoration: none;
+    border-bottom: 1px solid $primary;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-family: $heading-font-family;
+  font-weight: bold;
+  font-weight: 700;
+  line-height: 1;
+  color: $primary;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+}
+
+h1 {
+  font-size: #{$modular-scale-up4}em;
+  margin-bottom: #{$vertical-measure / $modular-scale-up4}em;
+}
+
+h2, h1.title {
+  font-size: #{$modular-scale-up3}em;
+  margin-bottom: #{$vertical-measure / $modular-scale-up3}em;
+}
+
+h1.title { margin-bottom: 0; }
+
+h2.subhead {
+  margin-bottom: #{$vertical-measure}em;
+  width: 75%;
+}
+
+h3 {
+  font-size: #{$modular-scale-up2}em;
+  margin: -0.2em 0 0.075em 0;
+}
+
+h4 {
+  color: $darkest;
+  font-size: #{$modular-scale-up1}em;
+  margin: -0.15em 0 0.15em 0;
+}
+
+h5, h2.subhead {
+  color: $darkest;
+  font-size: #{$modular-scale-base}em;
+  line-height: $base-line-height;
+  margin-bottom: 0;
+}
+
+h6 {
+  color: lighten($darkest, 25%);
+  font-size: #{$modular-scale-down1}em;
+  line-height: $base-line-height;
+  margin-bottom: 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0 0 #{$vertical-measure}em 1em;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+li {
+  line-height: $base-line-height;
+}
+
+hr {
+  margin: 0 0 #{$vertical-measure}em 0;
+  border: 0;
+  border-top: 1px solid $primary;
+  border-bottom: 1px solid $lightest;
+}
+
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted $gray20;
+}
+
+blockquote {
+  color: lighten($text, 25%);
+  padding-left: 1em;
+  margin: 0 0 #{$vertical-measure}em 0;
+  border-left: 0.25em solid $primary;
+
+  p {
+    margin-bottom: 0;
+    font-style: italic;
+  }
+
+  small {
+    font-size: #{$modular-scale-down1};
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+@media screen and (max-width: 24em) {
+  h1, h2, h1.title { font-size: #{$modular-scale-up2}em; }
+  h3, h5, h2.subhead { font-size: #{$modular-scale-up1}em; }
+  h4 { font-size: $base-font-size; }
+  h5, h2.subhead, h6 { font-size: #{$modular-scale-down2}em; width: 100%; }
+  p, ul, ol { font-size: #{$modular-scale-down1}em; line-height: $base-line-height; margin: 0 0 #{$vertical-measure}em 0; }
+  li { font-size: #{$modular-scale-down1}em; line-height: 1; margin-bottom: 0.4375em; }
+}

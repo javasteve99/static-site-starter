@@ -1,0 +1,6 @@
+auto: true
+exclude:
+- README.md
+- CNAME
+- css/sass
+permalink: pretty
