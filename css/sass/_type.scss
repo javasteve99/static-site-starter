@@ -117,6 +117,10 @@ dt {
   font-weight: bold;
 }
 
+dfn {
+    font-style: italic;
+}
+
 dd {
   margin-left: 1em;
 }
@@ -154,24 +158,16 @@ sub {
   bottom: -0.25em;
 }
 
-blockquote {
+@mixin blockquote { // apply to a <figure> wrapping a <blockquote>
   padding-left: 1em;
   margin: 0 0 #{$vertical-measure}em 0;
   border-left: 1px solid $primary;
-
-  p {
-    margin-bottom: 0;
-  }
-
-  small {
-    display: block;
-
-    &:before {
-      content: '\2014 \00A0';
-    }
+  blockquote { margin: 0; }
+  figcaption {
+    font-size: #{$modular-scale-down1}em;
+    cite { font-style: italic; }
+    &:before { content: '\2014 \00A0'; }
   }
 }
 
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-}
+.blockquote { @include blockquote; }

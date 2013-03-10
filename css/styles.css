@@ -150,6 +150,9 @@ dt, dd {
 dt {
   font-weight: bold; }
 
+dfn {
+  font-style: italic; }
+
 dd {
   margin-left: 1em; }
 
@@ -176,19 +179,18 @@ sup {
 sub {
   bottom: -0.25em; }
 
-blockquote {
+.blockquote {
   padding-left: 1em;
   margin: 0 0 1.4375em 0;
   border-left: 1px solid #049cdb; }
-  blockquote p {
-    margin-bottom: 0; }
-  blockquote small {
-    display: block; }
-    blockquote small:before {
+  .blockquote blockquote {
+    margin: 0; }
+  .blockquote figcaption {
+    font-size: 0.875em; }
+    .blockquote figcaption cite {
+      font-style: italic; }
+    .blockquote figcaption:before {
       content: '\2014 \00A0'; }
-
-q:before, q:after, blockquote:before, blockquote:after {
-  content: ""; }
 
 /* Code Styles ================================================================================== */
 code,
