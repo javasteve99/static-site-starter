@@ -1,4 +1,6 @@
-/* Type Styles ================================================================================== */
+/* ============================================================================================== */
+/* Base Typographic Styles                                                                        */
+/* ============================================================================================== */
 
 @mixin body-font-styles { // keep body specific type styles in the type stylesheet
   color: $base-text-color;
@@ -10,6 +12,7 @@
 p {
   line-height: $base-line-height;
   margin: 0 0 #{$vertical-measure}em 0;
+  @include hyphens(auto);
 }
 
 strong { font-weight: bold; }
@@ -33,7 +36,6 @@ a {
 
 
 // headings ====================================================================================== /
-
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
@@ -75,7 +77,6 @@ h1, h2, h3, h4, h5, h6 {
 
 
 // lists ========================================================================================= /
-
 ul, ol {
   padding: 0;
   margin: 0 0 #{$vertical-measure}em 1em;
@@ -128,8 +129,51 @@ dd {
 
 
 
-// other ========================================================================================= /
+// code ========================================================================================= /
+code, pre {
+  direction: ltr;
+  font-family: $code-typeface;
+  font-size: #{$modular-scale-down1}em;
+  font-weight: bold;
+  text-align: left;
+  overflow: auto;
+  padding: 0 3px 2px;
+  @include tab-size(2);
+  @include hyphens(none);
+}
 
+code {
+  background-color: lighten($darkest, 95%);
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+pre {
+  background-color: lighten($darkest, 95%);
+  line-height: $base-line-height;
+  display: block;
+  overflow-x: auto;
+  padding: #{$vertical-measure}em / 2;
+  margin: 0 0 #{$vertical-measure}em 0;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+
+  code {
+    color: inherit;
+    background-color: transparent;
+    padding: 0;
+    white-space: pre;
+    white-space: pre-wrap;
+    border: 0;
+  }
+}
+
+
+
+
+// other ========================================================================================= /
 hr {
   margin: #{$vertical-measure}em 0;
   border: 0;

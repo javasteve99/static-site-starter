@@ -1,4 +1,6 @@
-// flexible grid modified from Bourbon.io by thoughtbot ========================================== /
+// =============================================================================================== /
+// Flexible Grid System (modified from Bourbon.io by thoughtbot)                                   /
+// =============================================================================================== /
 
 @function columns($columns, $container-columns: $maximum-columns) {
   $width: $columns * $column-width + ($columns - 1) * $gutter-width;

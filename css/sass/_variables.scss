@@ -1,6 +1,8 @@
-// Variables ===================================================================================== /
+// =============================================================================================== /
+// Variables                                                                                       /
+// =============================================================================================== /
 
-// Colors
+// Colors ======================================================================================== /
 $blue:                  #049cdb;
 $green:                 #46a546;
 $red:                   #9d261d;
@@ -11,12 +13,14 @@ $purple:                #7a43b6;
 $white:                 #fff;
 $black:                 #000;
 
-// color scheme
 $primary:               $blue;
 $lightest:              $white;
 $darkest:               $black;
 
-// Modular Scale : 16 @ 1.618 and 23 @ 1.618
+
+
+
+// Modular Scale : 16 and 23 @ 1.618 - http://modularscale.com/ ================================== /
 $modular-scale-up5:     3.75;   // 60px
 $modular-scale-up4:     2.625;  // 42px
 $modular-scale-up3:     2.3125; // 37px
@@ -26,7 +30,10 @@ $modular-scale-base:    1;      // 16px
 $modular-scale-down1:   0.875;  // 14px
 $modular-scale-down2:   0.625;  // 10px
 
-// Type Variables
+
+
+
+// Type ========================================================================================== /
 $base-typeface:         "Helvetica Neue", Helvetica, Arial, sans-serif;
 $heading-typeface:      "Helvetica Neue", Helvetica, Arial, sans-serif;
 $code-typeface:         Menlo, Monaco, "Courier New", monospace;
@@ -35,14 +42,20 @@ $vertical-measure:      $modular-scale-up1;
 $base-text-color:       lighten($darkest, 30%);
 $link-color:            $blue;
 
-// Form Variables
+
+
+
+// Form ========================================================================================== /
 $default-input-width:       200px;
 $input-background-color:    $lightest;
 $input-border-color:        $darkest;
 $input-focus-border-color:  $blue;
 $placeholder-text-color:    lighten($darkest, 50%);
 
-// Grid function variables (not yet in use)
+
+
+
+// Grid ========================================================================================== /
 $max-width:             1000px; // set page max-width
 $column-width:          150px;  // set column width
 $gutter-width:          20px;   // set gutter width

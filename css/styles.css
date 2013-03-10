@@ -88,10 +88,16 @@ textarea {
   overflow: auto;
   vertical-align: top; }
 
-/* Type Styles ================================================================================== */
+/* ============================================================================================== */
+/* Base Typographic Styles                                                                        */
+/* ============================================================================================== */
 p {
   line-height: 1.4375;
-  margin: 0 0 1.4375em 0; }
+  margin: 0 0 1.4375em 0;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto; }
 
 strong {
   font-weight: bold; }
@@ -156,6 +162,46 @@ dfn {
 dd {
   margin-left: 1em; }
 
+code, pre {
+  direction: ltr;
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 0.875em;
+  font-weight: bold;
+  text-align: left;
+  overflow: auto;
+  padding: 0 3px 2px;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none; }
+
+code {
+  background-color: #f2f2f2;
+  padding: 2px 4px;
+  white-space: nowrap; }
+
+pre {
+  background-color: #f2f2f2;
+  line-height: 1.4375;
+  display: block;
+  overflow-x: auto;
+  padding: 1.4375em/2;
+  margin: 0 0 1.4375em 0;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap; }
+  pre code {
+    color: inherit;
+    background-color: transparent;
+    padding: 0;
+    white-space: pre;
+    white-space: pre-wrap;
+    border: 0; }
+
 hr {
   margin: 1.4375em 0;
   border: 0;
@@ -192,50 +238,9 @@ sub {
     .blockquote figcaption:before {
       content: '\2014 \00A0'; }
 
-/* Code Styles ================================================================================== */
-code,
-pre {
-  background-color: black;
-  color: white;
-  direction: ltr;
-  font-family: Menlo, Monaco, "Courier New", monospace;
-  font-size: 0.875em;
-  font-weight: bold;
-  font-weight: 700;
-  overflow: auto;
-  padding: 0 0.2em;
-  text-align: left;
-  text-shadow: none;
-  white-space: pre;
-  word-spacing: normal;
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none; }
-
-pre {
-  display: block;
-  line-height: 1.7;
-  overflow-x: auto;
-  margin: -0.2em 0 1.35em 0;
-  padding: 0.25em 1em; }
-  pre.scrollable {
-    max-height: 20em;
-    overflow-y: scroll; }
-  pre::-webkit-scrollbar {
-    height: 0;
-    opacity: 0.5; }
-  pre code[class*="language-"] {
-    background-color: transparent;
-    color: inherit;
-    font-family: Menlo, Monaco, "Courier New", monospace;
-    font-size: 1em;
-    padding: 0; }
-
-/* Form Styles ================================================================================== */
+/* ============================================================================================== */
+/* Base Form Styles                                                                               */
+/* ============================================================================================== */
 form {
   margin: 0 0 1.4375em 0; }
 
@@ -470,7 +475,7 @@ body {
   [role="contentinfo"] p {
     margin: 0.5em 0; }
 
-/* Helper classes =============================================================================== */
+/* Helper Classes =============================================================================== */
 .hide {
   display: none !important;
   visibility: hidden; }

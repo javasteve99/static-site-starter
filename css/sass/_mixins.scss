@@ -1,5 +1,8 @@
-// Opacity, extend to IE ========================================================================= /
+// =============================================================================================== /
+// Mixins                                                                                          /
+// =============================================================================================== /
 
+// extend CSS opacity to Internet Explorer 5-8 =================================================== /
 @mixin opacity ($value) {
   opacity: $value;
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=($value * 100))"; // IE8
@@ -10,9 +13,33 @@
 
 
 
+// used to customize the width of the tab character ============================================== /
+// accepts an integer or inherit. default behavior is 8
+// see: https://developer.mozilla.org/en-US/docs/CSS/tab-size
+@mixin tab-size($value: 8) {
+  -moz-tab-size: $value;
+    -o-tab-size: $value;
+       tab-size: $value;
+}
+
+
+
+
+// tells the browser how to split words to improve text layout =================================== /
+// accepts none, manual, auto or inherit. default behavior is manual
+// see: https://developer.mozilla.org/en-US/docs/CSS/hyphens
+@mixin hyphens($value: manual) {
+  -webkit-hyphens: $value;
+     -moz-hyphens: $value;
+      -ms-hyphens: $value;
+          hyphens: $value;
+}
+
+
+
+
 // Fool-proof @font-face ========================================================================= /
 // http://coding.smashingmagazine.com/2013/02/14/setting-weights-and-styles-at-font-face-declaration/
-
 @mixin font-face($font-family, $file-path, $font-weight, $font-style) {
   @font-face {
     font-family: $font-family;
