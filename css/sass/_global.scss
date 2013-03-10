@@ -2,20 +2,6 @@
 /* Global Styles                                                                                  */
 /* ============================================================================================== */
 
-* {
-  @include box-sizing(border-box);
-}
-
-html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-html,
-body {
-  margin: 0; padding: 0; width: 100%;
-}
-
 body {
   @include body-font-styles;
 }

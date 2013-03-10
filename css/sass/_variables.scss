@@ -3,60 +3,62 @@
 // =============================================================================================== /
 
 // Colors ======================================================================================== /
-$blue:                  #049cdb;
-$green:                 #46a546;
-$red:                   #9d261d;
-$yellow:                #ffc40d;
-$orange:                #f89406;
-$pink:                  #c3325f;
-$purple:                #7a43b6;
-$white:                 #fff;
-$black:                 #000;
+$blue:                            #049cdb;
+$green:                           #46a546;
+$red:                             #9d261d;
+$yellow:                          #ffc40d;
+$orange:                          #f89406;
+$pink:                            #c3325f;
+$purple:                          #7a43b6;
+$white:                           #fff;
+$black:                           #000;
 
-$primary:               $blue;
-$lightest:              $white;
-$darkest:               $black;
+$primary:                         $blue;
+$lightest:                        $white;
+$darkest:                         $black;
 
 
 
 
 // Modular Scale : 16 and 23 @ 1.618 - http://modularscale.com/ ================================== /
-$modular-scale-up5:     3.75;   // 60px
-$modular-scale-up4:     2.625;  // 42px
-$modular-scale-up3:     2.3125; // 37px
-$modular-scale-up2:     1.625;  // 26px
-$modular-scale-up1:     1.4375; // 22px
-$modular-scale-base:    1;      // 16px
-$modular-scale-down1:   0.875;  // 14px
-$modular-scale-down2:   0.625;  // 10px
+$modular-scale-up5:               3.75;   // 60px
+$modular-scale-up4:               2.625;  // 42px
+$modular-scale-up3:               2.3125; // 37px
+$modular-scale-up2:               1.625;  // 26px
+$modular-scale-up1:               1.4375; // 22px
+$modular-scale-base:              1;      // 16px
+$modular-scale-down1:             0.875;  // 14px
+$modular-scale-down2:             0.625;  // 10px
 
 
 
 
 // Type ========================================================================================== /
-$base-typeface:         "Helvetica Neue", Helvetica, Arial, sans-serif;
-$heading-typeface:      "Helvetica Neue", Helvetica, Arial, sans-serif;
-$code-typeface:         Menlo, Monaco, "Courier New", monospace;
-$base-line-height:      $modular-scale-up1;
-$vertical-measure:      $modular-scale-up1;
-$base-text-color:       lighten($darkest, 30%);
-$link-color:            $blue;
+$base-typeface:                   "Helvetica Neue", Helvetica, Arial, sans-serif;
+$heading-typeface:                "Helvetica Neue", Helvetica, Arial, sans-serif;
+$code-typeface:                   Menlo, Monaco, "Courier New", monospace;
+$base-line-height:                $modular-scale-up1;
+$vertical-measure:                $modular-scale-up1;
+$base-text-color:                 lighten($darkest, 30%);
+$link-color:                      $blue;
 
 
 
 
 // Form ========================================================================================== /
-$default-input-width:       200px;
-$input-background-color:    $lightest;
-$input-border-color:        $darkest;
-$input-focus-border-color:  $blue;
-$placeholder-text-color:    lighten($darkest, 50%);
+$default-input-width:             200px;
+$input-background-color:          $lightest;
+$input-border-color:              $darkest;
+$input-focus-border-color:        $blue;
+$input-disabled-background-color: lighten($darkest, 75%);
+$input-placeholder-text-color:    lighten($darkest, 50%);
+$input-invalid-color:             $red;
 
 
 
 
 // Grid ========================================================================================== /
-$max-width:             1000px; // set page max-width
-$column-width:          150px;  // set column width
-$gutter-width:          20px;   // set gutter width
-$maximum-columns:       6;      // set max number of columns
+$max-width:                       1000px; // set page max-width
+$column-width:                    150px;  // set column width
+$gutter-width:                    20px;   // set gutter width
+$maximum-columns:                 6;      // set max number of columns

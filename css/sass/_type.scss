@@ -5,7 +5,6 @@
 @mixin body-font-styles { // keep body specific type styles in the type stylesheet
   color: $base-text-color;
   font-family: $base-typeface;
-  font-size: 100%;
   line-height: $base-line-height;
 }
 

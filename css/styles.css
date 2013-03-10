@@ -1,3 +1,20 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+body {
+  font-size: 100%; }
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
   display: block; }
 
@@ -27,66 +44,6 @@ figure {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
-
-fieldset {
-  border: 1px solid silver;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
-
-legend {
-  border: 0;
-  padding: 0; }
-
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  margin: 0; }
-
-button,
-input {
-  line-height: normal; }
-
-button,
-select {
-  text-transform: none; }
-
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer; }
-
-button[disabled],
-html input[disabled] {
-  cursor: default; }
-
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0; }
-
-input[type="search"] {
-  -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box; }
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
-
-textarea {
-  overflow: auto;
-  vertical-align: top; }
 
 /* ============================================================================================== */
 /* Base Typographic Styles                                                                        */
@@ -258,7 +215,11 @@ legend {
   border: 0; }
 
 label, input, button, select, textarea {
-  font-family: inherit; }
+  font-family: inherit;
+  font-size: 100%;
+  line-height: normal;
+  text-transform: none;
+  margin: 0; }
 
 label {
   display: block; }
@@ -295,7 +256,9 @@ input, textarea {
   width: 200px; }
 
 textarea {
-  height: auto; }
+  height: auto;
+  overflow: auto;
+  vertical-align: top; }
 
 textarea,
 input[type="text"],
@@ -333,6 +296,16 @@ input[type="color"] {
     outline: 0;
     outline: thin dotted \9;
     /* IE6-9 */ }
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
 
 input[type="radio"],
 input[type="checkbox"] {
@@ -387,28 +360,51 @@ input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: gray; }
 
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+button[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly],
+button[readonly] {
+  cursor: not-allowed;
+  background-color: #bfbfbf; }
+
+input[type="radio"][disabled],
+input[type="checkbox"][disabled],
+input[type="radio"][readonly],
+input[type="checkbox"][readonly] {
+  background-color: transparent; }
+
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid {
+  color: #9d261d;
+  border-color: #9d261d; }
+  input:focus:invalid:focus,
+  textarea:focus:invalid:focus,
+  select:focus:invalid:focus {
+    border-color: #47110d; }
+
 /* ============================================================================================== */
 /* Global Styles                                                                                  */
 /* ============================================================================================== */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-html {
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; }
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%; }
-
 body {
   color: #4d4d4d;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
   line-height: 1.4375; }
 
 .container {
