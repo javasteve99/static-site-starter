@@ -1,13 +1,5 @@
-// Global Mixins ================================================================================= /
+// Opacity, extend to IE ========================================================================= /
 
-// Micro-clearfix hack, also part of Bourbon
-@mixin clearfix {
-  zoom: 1;
-  &:before, &:after { content: ""; display: table; }
-  &:after { clear: both; }
-}
-
-// Opacity, extend to IE
 @mixin opacity ($value) {
   opacity: $value;
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=($value * 100))"; // IE8
@@ -15,31 +7,60 @@
   zoom: 1; // hacks IE requirement that element be positioned
 }
 
-/* Helper classes =============================================================================== */
 
-// Hide from screenreaders and browsers
-.hide {
-  display: none !important;
-  visibility: hidden;
+
+
+// Fool-proof @font-face ========================================================================= /
+// http://coding.smashingmagazine.com/2013/02/14/setting-weights-and-styles-at-font-face-declaration/
+
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+           url('#{$file-path}.woff') format('woff'),
+           url('#{$file-path}.ttf') format('truetype'),
+           url('#{$file-path}.svg##{$font-family}') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+  // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+      font-family: $font-family;
+        src: url('#{$file-path}.svg##{$font-family}') format('svg');
+    }
+  }
 }
 
-.show {
-  display: block !important;
-}
-
-// Hide only visually, but have it available for screenreaders
-.visually-hide {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-// Hide visually and from screenreaders, but maintain layout
-.invisible {
-  visibility: hidden;
-}
+// Usage Example
+// @include font-face(Ubuntu-Light, 'https://dl.dropbox.com/u/1220078/ubuntu-new/Ubuntu-Light-webfont', 300, normal);
+// @include font-face(Ubuntu-Light-Italic, 'https://dl.dropbox.com/u/1220078/ubuntu-new/Ubuntu-Light-Italic-webfont', 300, italic);
+// @include font-face(Ubuntu-Regular, 'https://dl.dropbox.com/u/1220078/ubuntu-new/Ubuntu-Regular-webfont', 400, normal);
+// @include font-face(Ubuntu-Regular-Italic, 'https://dl.dropbox.com/u/1220078/ubuntu-new/Ubuntu-Regular-Italic-webfont', 400, italic);
+// @include font-face(Ubuntu-Bold, 'https://dl.dropbox.com/u/1220078/ubuntu-new/Ubuntu-Bold-webfont', 700, normal);
+// @include font-face(Ubuntu-Bold-Italic, 'https://dl.dropbox.com/u/1220078/ubuntu-new/Ubuntu-Bold-Italic-webfont', 700, italic);
+//
+// @mixin Ubuntu-Light {
+//   font-family: 'Ubuntu-Light', arial, sans-serif;
+//   font-weight: 300; font-style: normal; }
+//
+// @mixin Ubuntu-Light-Italic {
+//   font-family: 'Ubuntu-Light-Italic', arial, sans-serif;
+//   font-weight: 300; font-style: italic; }
+//
+// @mixin Ubuntu-Regular {
+//   font-family: 'Ubuntu-Regular', arial, sans-serif;
+//   font-weight: 400; font-style: normal; }
+//
+// @mixin Ubuntu-Regular-Italic {
+//   font-family: 'Ubuntu-Regular-Italic', arial, sans-serif;
+//   font-weight: 400; font-style: italic; }
+//
+// @mixin Ubuntu-Bold {
+//   font-family: 'Ubuntu-Bold', arial, sans-serif;
+//   font-weight: 700; font-style: normal; }
+//
+// @mixin Ubuntu-Bold-Italic {
+//   font-family: 'Ubuntu-Bold-Italic', arial, sans-serif;
+//   font-weight: 700; font-style: italic; }

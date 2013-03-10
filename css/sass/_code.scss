@@ -1,12 +1,10 @@
 /* Code Styles ================================================================================== */
 code,
 pre {
-  background-color: $sol-dark-bg;
-  @include border-radius(2px);
-  @include box-shadow(0 1px 4px rgba($darkest, 0.3));
-  color: $sol-lightest-text;
+  background-color: $darkest;
+  color: $lightest;
   direction: ltr;
-  font-family: $code-font-family;
+  font-family: $code-typeface;
   font-size: #{$modular-scale-down1}em;
   font-weight: bold;
   font-weight: 700;
@@ -45,8 +43,7 @@ pre {
   code[class*="language-"] {
     background-color: transparent;
     color: inherit;
-    @include box-shadow(none);
-    font-family: $code-font-family;
+    font-family: $code-typeface;
     font-size: #{$modular-scale-base}em;
     padding: 0;
   }

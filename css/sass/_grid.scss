@@ -1,4 +1,4 @@
-// flexible grid functions modified from Bourbon by thoughtbot, inc ============================== /
+// flexible grid modified from Bourbon.io by thoughtbot ========================================== /
 
 @function columns($columns, $container-columns: $maximum-columns) {
   $width: $columns * $column-width + ($columns - 1) * $gutter-width;
@@ -11,27 +11,19 @@
   @return percentage($gutter / $container-width);
 }
 
-// row mixin includes clearfix hack, last-child margin fix and any global row styles ============= /
-@mixin row {
+@mixin row($children: div) {
   width: 100%;
   max-width: $max-width;
   margin: 0 auto;
-  @include clearfix;
-  @include nesting;
-}
-
-// target nested elements with grid styles. use in global styles as well as row mixin ============ /
-@mixin nesting {
   padding: 0;
+  @include clearfix;
 
-  & > div {
+  & > #{$children} {
     float: left;
     margin-right: gutter();
-    @include border-box;
   }
 }
 
-// calculate offset amounts for offset columns =================================================== /
 @function offset-columns($columns) {
   $margin: $columns * $column-width + $columns * $gutter-width;
   @return $margin;
@@ -48,7 +40,6 @@
   }
 }
 
-// remove margin-right from last element in a row or container so all columns fit ================ /
 @mixin last {
   margin-right: 0;
   float: right;

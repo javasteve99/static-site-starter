@@ -1,4 +1,66 @@
-/* Global Styles ================================================================================ */
-html, body { margin: 0; padding: 0; width: 100%; }
-body { @include body-font-styles; }
-.container { width: 100%; max-width: $max-width; margin: 0 auto; padding: 0; }
+/* ============================================================================================== */
+/* Global Styles                                                                                  */
+/* ============================================================================================== */
+
+* {
+  @include box-sizing(border-box);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+html,
+body {
+  margin: 0; padding: 0; width: 100%;
+}
+
+body {
+  @include body-font-styles;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1em;
+  width: 100%;
+  max-width: $max-width;
+  position: relative;
+  @include clearfix;
+}
+
+
+
+
+/* ============================================================================================== */
+/* Demo Styles                                                                                    */
+/* ============================================================================================== */
+
+[role="banner"] {
+  border-bottom: 1px solid lighten(black, 80%);
+
+  h1 {
+    @include third;
+    color: $primary;
+    margin: 0.25em 0;
+  }
+}
+
+[role="main"] {
+  padding: 2em 0;
+
+  h1 { @include first; }
+  h2 { @include second; }
+  h3 { @include third; }
+  h4 { @include fourth; }
+  h5 { @include fifth; }
+  h6 { @include sixth; }
+}
+
+[role="contentinfo"] {
+  border-top: 1px solid lighten(black, 80%);
+
+  p {
+    margin: 0.5em 0;
+  }
+}

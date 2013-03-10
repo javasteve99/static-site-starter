@@ -1,18 +1,13 @@
 /* Type Styles ================================================================================== */
 
-html { -webkit-font-smoothing: antialiased; }
-
 @mixin body-font-styles { // keep body specific type styles in the type stylesheet
-  color: $base-font-color;
-  font-family: $base-font-family;
+  color: $base-text-color;
+  font-family: $base-typeface;
   font-size: 100%;
   line-height: $base-line-height;
-  font-style: normal;
-  font-weight: normal;
 }
 
 p {
-  font-size: $base-font-size;
   line-height: $base-line-height;
   margin: 0 0 #{$vertical-measure}em 0;
 }
@@ -20,59 +15,82 @@ p {
 strong { font-weight: bold; }
 em { font-style: italic; }
 cite { font-style: normal; }
+small { font-size: 80%; }
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  border-bottom: 1px solid lighten($link-color, 20%);
+  @include transition(color 0.25s linear, border-bottom 0.25s linear);
+
+  &:hover {
+    color: darken($link-color, 10%);
+    border-bottom: 1px solid $link-color;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+}
+
+
+
+
+// headings ====================================================================================== /
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
-  font-family: $heading-font-family;
+  font-family: $heading-typeface;
+  font-size: 100%;
   font-weight: bold;
-  line-height: 1;
-  color: $heading-font-color;
-  text-rendering: optimizelegibility; // Fix the character spacing for headings
+  line-height: $base-line-height;
+  text-rendering: optimizelegibility;
 }
 
-h1 {
+@mixin first {
   font-size: #{$modular-scale-up4}em;
-  margin-bottom: #{$vertical-measure / $modular-scale-up4}em;
 }
 
-h2 {
+@mixin second {
   font-size: #{$modular-scale-up3}em;
-  margin-bottom: #{$vertical-measure / $modular-scale-up3}em;
 }
 
-h3 {
+@mixin third {
   font-size: #{$modular-scale-up2}em;
-  margin-bottom: #{$vertical-measure / $modular-scale-up2}em;
 }
 
-h4 {
+@mixin fourth {
   font-size: #{$modular-scale-up1}em;
-  margin-bottom: #{$vertical-measure / $modular-scale-up1}em;
 }
 
-h5 {
+@mixin fifth {
   font-size: #{$modular-scale-base}em;
-  margin-bottom: #{$vertical-measure}em;
 }
 
-h6 {
-  font-size: #{$modular-scale-base}em;
-  margin-bottom: #{$vertical-measure}em;
-  color: lighten($heading-font-color, 25%);
+@mixin sixth {
+  font-size: #{$modular-scale-down1}em;
+  color: lighten($base-text-color, 25%);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+
+
+
+
+// lists ========================================================================================= /
 
 ul, ol {
   padding: 0;
   margin: 0 0 #{$vertical-measure}em 1em;
 }
 
-ul ul,
-ul ol,
-ol ol,
-ol ul {
+ul ul, ul ol, ol ol, ol ul {
   margin-bottom: 0;
 }
 
@@ -80,40 +98,89 @@ li {
   line-height: $base-line-height;
 }
 
-hr {
+@mixin unstyled-list { // usage: apply to <ul> class
+  list-style: none;
+  margin-left: 0;
+}
+
+@mixin inline-list {
+  list-style: none;
+  margin-left: 0;
+
+  & > li {
+    @include inline-block;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}
+
+dl {
   margin: 0 0 #{$vertical-measure}em 0;
+}
+
+dt, dd {
+  line-height: $base-line-height;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 1em;
+}
+
+
+
+
+// other ========================================================================================= /
+
+hr {
+  margin: #{$vertical-measure}em 0;
   border: 0;
   border-top: 1px solid $darkest;
-  border-bottom: 1px solid $lightest;
+  border-bottom: 1px solid transparent;
 }
 
 abbr[title] {
   cursor: help;
-  border-bottom: 1px dotted $gray20;
+  border-bottom: 1px dotted lighten($darkest, 80%);
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
 }
 
 blockquote {
-  color: lighten($base-font-color, 25%);
   padding-left: 1em;
   margin: 0 0 #{$vertical-measure}em 0;
-  border-left: 0.25em solid $primary;
+  border-left: 1px solid $primary;
 
   p {
     margin-bottom: 0;
-    font-style: italic;
   }
 
   small {
-    font-size: #{$modular-scale-down1};
+    display: block;
+
     &:before {
       content: '\2014 \00A0';
     }
   }
 }
 
-q:before,
-q:after,
-blockquote:before,
-blockquote:after {
+q:before, q:after, blockquote:before, blockquote:after {
   content: "";
 }
