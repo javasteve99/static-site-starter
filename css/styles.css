@@ -444,6 +444,24 @@ body {
     color: #8c8c8c;
     letter-spacing: 0.1em;
     text-transform: uppercase; }
+  [role="main"] .unstyled-list {
+    list-style: none;
+    margin-left: 0; }
+  [role="main"] .inline-list {
+    list-style: none;
+    margin-left: 0; }
+    [role="main"] .inline-list > li {
+      display: inline-block;
+      vertical-align: baseline;
+      zoom: 1;
+      *display: inline;
+      *vertical-align: auto;
+      margin-left: 0.5em;
+      margin-right: 0.5em; }
+    [role="main"] .inline-list li:first-child {
+      margin-left: 0; }
+    [role="main"] .inline-list li:last-child {
+      margin-right: 0; }
 
 [role="contentinfo"] {
   border-top: 1px solid #cccccc; }

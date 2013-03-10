@@ -40,7 +40,7 @@ body {
   border-bottom: 1px solid lighten(black, 80%);
 
   h1 {
-    @include third;
+    @include heading-third;
     color: $primary;
     margin: 0.25em 0;
   }
@@ -49,12 +49,15 @@ body {
 [role="main"] {
   padding: 2em 0;
 
-  h1 { @include first; }
-  h2 { @include second; }
-  h3 { @include third; }
-  h4 { @include fourth; }
-  h5 { @include fifth; }
-  h6 { @include sixth; }
+  h1 { @include heading-first; }
+  h2 { @include heading-second; }
+  h3 { @include heading-third; }
+  h4 { @include heading-fourth; }
+  h5 { @include heading-fifth; }
+  h6 { @include heading-sixth; }
+
+  .unstyled-list { @include unstyled-list; }
+  .inline-list { @include inline-list; }
 }
 
 [role="contentinfo"] {

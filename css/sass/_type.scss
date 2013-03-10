@@ -22,20 +22,11 @@ a {
   text-decoration: none;
   border-bottom: 1px solid lighten($link-color, 20%);
   @include transition(color 0.25s linear, border-bottom 0.25s linear);
-
   &:hover {
     color: darken($link-color, 10%);
-    border-bottom: 1px solid $link-color;
-  }
-
-  &:focus {
-    outline: thin dotted;
-  }
-
-  &:active,
-  &:hover {
-    outline: 0;
-  }
+    border-bottom: 1px solid $link-color; }
+  &:focus { outline: thin dotted; }
+  &:active, &:hover { outline: 0; }
 }
 
 
@@ -53,27 +44,27 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizelegibility;
 }
 
-@mixin first {
+@mixin heading-first {
   font-size: #{$modular-scale-up4}em;
 }
 
-@mixin second {
+@mixin heading-second {
   font-size: #{$modular-scale-up3}em;
 }
 
-@mixin third {
+@mixin heading-third {
   font-size: #{$modular-scale-up2}em;
 }
 
-@mixin fourth {
+@mixin heading-fourth {
   font-size: #{$modular-scale-up1}em;
 }
 
-@mixin fifth {
+@mixin heading-fifth {
   font-size: #{$modular-scale-base}em;
 }
 
-@mixin sixth {
+@mixin heading-sixth {
   font-size: #{$modular-scale-down1}em;
   color: lighten($base-text-color, 25%);
   letter-spacing: 0.1em;
@@ -106,12 +97,12 @@ li {
 @mixin inline-list {
   list-style: none;
   margin-left: 0;
-
   & > li {
     @include inline-block;
     margin-left: 0.5em;
-    margin-right: 0.5em;
-  }
+    margin-right: 0.5em; }
+  & li:first-child { margin-left: 0; }
+  & li:last-child { margin-right: 0; }
 }
 
 dl {
