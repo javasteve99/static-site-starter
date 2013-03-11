@@ -44,6 +44,10 @@ body {
 
   .unstyled-list { @include unstyled-list; }
   .inline-list { @include inline-list; }
+
+  #demo-form {
+    width: 400px;
+  }
 }
 
 [role="contentinfo"] {

@@ -225,7 +225,8 @@ label, input, button, select, textarea {
   margin: 0; }
 
 label {
-  display: block; }
+  display: block;
+  margin-bottom: 0.25em; }
 
 select,
 textarea,
@@ -256,7 +257,7 @@ input[type="color"] {
   vertical-align: middle; }
 
 input, textarea {
-  width: 200px; }
+  width: 100%; }
 
 textarea {
   height: auto;
@@ -279,7 +280,7 @@ input[type="search"],
 input[type="tel"],
 input[type="color"] {
   background-color: white;
-  border: 1px solid black; }
+  border: 1px solid #bfbfbf; }
   textarea:focus,
   input[type="text"]:focus,
   input[type="password"]:focus,
@@ -301,10 +302,7 @@ input[type="color"] {
     /* IE6-9 */ }
 
 input[type="search"] {
-  -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box; }
+  -webkit-appearance: textfield; }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
@@ -312,12 +310,28 @@ input[type="search"]::-webkit-search-decoration {
 
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 4px 0 0;
-  *margin-top: 0;
-  /* IE7 */
-  margin-top: 1px \9;
-  /* IE8-9 */
+  margin: 0;
   line-height: normal; }
+
+.radio,
+.checkbox {
+  min-height: 1.4375; }
+  .radio ul,
+  .checkbox ul {
+    list-style: none;
+    margin-left: 0; }
+  .radio li,
+  .checkbox li {
+    height: 1.4375;
+    line-height: 1.4375; }
+    .radio li label,
+    .checkbox li label {
+      font-size: 0.875em; }
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  float: left;
+  margin: 2px 6px 0 0; }
 
 input[type="file"],
 input[type="image"],
@@ -330,15 +344,12 @@ input[type="checkbox"] {
 
 select,
 input[type="file"] {
-  height: 2em;
-  /* In IE7, the height of the select element cannot be changed by height, only font-size */
-  *margin-top: 4px;
-  /* For IE7, add top margin to align select with labels */
-  line-height: 2em; }
+  height: 1.625em;
+  line-height: 1.625em; }
 
 select {
-  width: 200px;
-  border: 1px solid black;
+  width: 100%;
+  border: 1px solid #bfbfbf;
   background-color: white; }
 
 select[multiple],
@@ -355,13 +366,13 @@ input[type="checkbox"]:focus {
 
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: gray; }
+  color: #cccccc; }
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: gray; }
+  color: #cccccc; }
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: gray; }
+  color: #cccccc; }
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -384,7 +395,7 @@ select[readonly],
 textarea[readonly],
 button[readonly] {
   cursor: not-allowed;
-  background-color: #bfbfbf; }
+  background-color: #cccccc; }
 
 input[type="radio"][disabled],
 input[type="checkbox"][disabled],
@@ -468,6 +479,8 @@ body {
       margin-left: 0; }
     [role="main"] .inline-list li:last-child {
       margin-right: 0; }
+  [role="main"] #demo-form {
+    width: 400px; }
 
 [role="contentinfo"] {
   border-top: 1px solid #cccccc; }

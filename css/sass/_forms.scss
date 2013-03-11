@@ -31,6 +31,7 @@ label, input, button, select, textarea {
 
 label {
   display: block;
+  margin-bottom: 0.25em;
 }
 
 select,
@@ -59,7 +60,7 @@ input[type="color"] {
 }
 
 input, textarea {
-  width: $default-input-width;
+  width: 100%;
 }
 
 textarea {
@@ -95,9 +96,6 @@ input[type="color"] {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -107,10 +105,33 @@ input[type="search"]::-webkit-search-decoration {
 
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 4px 0 0;
-  *margin-top: 0; /* IE7 */
-  margin-top: 1px \9; /* IE8-9 */
+  margin: 0;
   line-height: normal;
+}
+
+.radio,
+.checkbox {
+  min-height: $base-line-height;
+
+  ul {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  li {
+    height: $base-line-height;
+    line-height: $base-line-height;
+
+    label {
+      font-size: #{$modular-scale-down1}em;
+    }
+  }
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  float: left;
+  margin: 2px 6px 0 0;
 }
 
 input[type="file"],
@@ -125,13 +146,12 @@ input[type="checkbox"] {
 
 select,
 input[type="file"] {
-  height: 2em; /* In IE7, the height of the select element cannot be changed by height, only font-size */
-  *margin-top: 4px; /* For IE7, add top margin to align select with labels */
-  line-height: 2em;
+  height: #{$modular-scale-up2}em;
+  line-height: #{$modular-scale-up2}em;
 }
 
 select {
-  width: $default-input-width;
+  width: 100%;
   border: 1px solid $input-border-color;
   background-color: $input-background-color;
 }

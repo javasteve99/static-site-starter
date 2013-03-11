@@ -46,13 +46,14 @@ $link-color:                      $blue;
 
 
 // Form ========================================================================================== /
-$default-input-width:             200px;
+$default-input-width:             300px;
 $input-background-color:          $lightest;
-$input-border-color:              $darkest;
+$input-border-color:              lighten($darkest, 75%);
 $input-focus-border-color:        $blue;
-$input-disabled-background-color: lighten($darkest, 75%);
-$input-placeholder-text-color:    lighten($darkest, 50%);
+$input-disabled-background-color: lighten($darkest, 80%);
+$input-placeholder-text-color:    lighten($darkest, 80%);
 $input-invalid-color:             $red;
+$label-font-size:                 #{$modular-scale-down1}em;
 
 
 
