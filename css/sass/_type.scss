@@ -2,7 +2,7 @@
 /* Base Typographic Styles                                                                        */
 /* ============================================================================================== */
 
-@mixin body-font-styles { // keep body specific type styles in the type stylesheet
+body {
   color: $base-text-color;
   font-family: $base-typeface;
   line-height: $base-line-height;
@@ -130,25 +130,24 @@ dd {
 
 // code ========================================================================================= /
 code, pre {
-  direction: ltr;
+  color: $code-text-color;
   font-family: $code-typeface;
-  font-size: #{$modular-scale-down1}em;
-  font-weight: bold;
+  direction: ltr;
   text-align: left;
   overflow: auto;
   padding: 0 3px 2px;
-  @include tab-size(2);
   @include hyphens(none);
+  @include tab-size($code-tab-size);
 }
 
 code {
-  background-color: lighten($darkest, 95%);
+  background-color: $code-inline-background-color;
   padding: 2px 4px;
   white-space: nowrap;
 }
 
 pre {
-  background-color: lighten($darkest, 95%);
+  background-color: $code-block-background-color;
   line-height: $base-line-height;
   display: block;
   overflow-x: auto;
@@ -162,10 +161,10 @@ pre {
   code {
     color: inherit;
     background-color: transparent;
+    border: 0;
     padding: 0;
     white-space: pre;
     white-space: pre-wrap;
-    border: 0;
   }
 }
 
@@ -212,5 +211,3 @@ sub {
     &:before { content: '\2014 \00A0'; }
   }
 }
-
-.blockquote { @include blockquote; }

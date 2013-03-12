@@ -36,11 +36,15 @@ $modular-scale-down2:             0.625;  // 10px
 // Type ========================================================================================== /
 $base-typeface:                   "Helvetica Neue", Helvetica, Arial, sans-serif;
 $heading-typeface:                "Helvetica Neue", Helvetica, Arial, sans-serif;
-$code-typeface:                   Menlo, Monaco, "Courier New", monospace;
 $base-line-height:                $modular-scale-up1;
 $vertical-measure:                $modular-scale-up1;
 $base-text-color:                 lighten($darkest, 30%);
 $link-color:                      $blue;
+$code-typeface:                   Menlo, Monaco, "Courier New", monospace;
+$code-tab-size:                   2;
+$code-text-color:                 lighten($darkest, 30%);
+$code-inline-background-color:    lighten($darkest, 95%);
+$code-block-background-color:     lighten($darkest, 95%);
 
 
 

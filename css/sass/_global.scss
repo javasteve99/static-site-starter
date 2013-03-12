@@ -2,10 +2,6 @@
 /* Global Styles                                                                                  */
 /* ============================================================================================== */
 
-body {
-  @include body-font-styles;
-}
-
 .container {
   margin: 0 auto;
   padding: 0 1em;
@@ -44,6 +40,8 @@ body {
 
   .unstyled-list { @include unstyled-list; }
   .inline-list { @include inline-list; }
+
+  .blockquote { @include blockquote; }
 
   #demo-form {
     width: 400px;

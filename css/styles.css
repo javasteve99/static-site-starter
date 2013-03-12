@@ -51,6 +51,11 @@ table {
 /* ============================================================================================== */
 /* Base Typographic Styles                                                                        */
 /* ============================================================================================== */
+body {
+  color: #4d4d4d;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4375; }
+
 p {
   line-height: 1.4375;
   margin: 0 0 1.4375em 0;
@@ -123,20 +128,19 @@ dd {
   margin-left: 1em; }
 
 code, pre {
-  direction: ltr;
+  color: #4d4d4d;
   font-family: Menlo, Monaco, "Courier New", monospace;
-  font-size: 0.875em;
-  font-weight: bold;
+  direction: ltr;
   text-align: left;
   overflow: auto;
   padding: 0 3px 2px;
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
-  hyphens: none; }
+  hyphens: none;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2; }
 
 code {
   background-color: #f2f2f2;
@@ -157,10 +161,10 @@ pre {
   pre code {
     color: inherit;
     background-color: transparent;
+    border: 0;
     padding: 0;
     white-space: pre;
-    white-space: pre-wrap;
-    border: 0; }
+    white-space: pre-wrap; }
 
 hr {
   margin: 1.4375em 0;
@@ -184,19 +188,6 @@ sup {
 
 sub {
   bottom: -0.25em; }
-
-.blockquote {
-  padding-left: 1em;
-  margin: 0 0 1.4375em 0;
-  border-left: 1px solid #049cdb; }
-  .blockquote blockquote {
-    margin: 0; }
-  .blockquote figcaption {
-    font-size: 0.875em; }
-    .blockquote figcaption cite {
-      font-style: italic; }
-    .blockquote figcaption:before {
-      content: '\2014 \00A0'; }
 
 /* ============================================================================================== */
 /* Base Form Styles                                                                               */
@@ -416,11 +407,6 @@ select:focus:invalid {
 /* ============================================================================================== */
 /* Global Styles                                                                                  */
 /* ============================================================================================== */
-body {
-  color: #4d4d4d;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.4375; }
-
 .container {
   margin: 0 auto;
   padding: 0 1em;
@@ -479,6 +465,18 @@ body {
       margin-left: 0; }
     [role="main"] .inline-list li:last-child {
       margin-right: 0; }
+  [role="main"] .blockquote {
+    padding-left: 1em;
+    margin: 0 0 1.4375em 0;
+    border-left: 1px solid #049cdb; }
+    [role="main"] .blockquote blockquote {
+      margin: 0; }
+    [role="main"] .blockquote figcaption {
+      font-size: 0.875em; }
+      [role="main"] .blockquote figcaption cite {
+        font-style: italic; }
+      [role="main"] .blockquote figcaption:before {
+        content: '\2014 \00A0'; }
   [role="main"] #demo-form {
     width: 400px; }
 
