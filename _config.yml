@@ -3,4 +3,5 @@ exclude:
 - README.md
 - CNAME
 - css/sass
+- Rakefile
 permalink: pretty
