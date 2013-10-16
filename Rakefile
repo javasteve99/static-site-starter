@@ -2,7 +2,7 @@ desc 'Start Jekyll server and watching Sass/Bourbon files'
 task :server do
   puts "Starting the Jekyll server and watching Sass/Bourbon files."
   jekyllPid = Process.spawn('jekyll serve --watch')
-  sassPid = Process.spawn('sass --watch css/sass:css')
+  sassPid = Process.spawn('sass --watch css/sass:css --style compressed')
 
   trap("INT") {
     [jekyllPid, sassPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
