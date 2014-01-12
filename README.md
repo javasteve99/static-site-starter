@@ -1,20 +1,29 @@
 Static Site Starter
 ===================
 
-A skeleton for quickly starting a new static site. It's built on HTML5 Boilerplate, and includes Sass and Bourbon to facilitate rapid writing of CSS and CSS3.
+A skeleton for quickly starting a new static site. It includes Jekyll to generate static pages without repetition of code, SASS to facilitate rapid writing of CSS, and Grunt to concatenate and minify JS files.
 
-_If you're thinking "Hey, there used to be a lot more stuff in this" then you're probably looking for the [Static Prototyping Framework] (https://github.com/javasteve99/static-prototyping-framework) instead. This grew beyond it's original purpose pretty quickly, so I split the project._
+Installing Dependencies
+-----------------------
 
-Sass
-----
-Sass is better CSS and is include to simplify rapid front-end development. For more, see [the Sass homepage](http://sass-lang.com/).
+You should have Ruby and Node JS installed for the dependencies to work. If you're running OSX you most likely have Ruby installed. If not, or if you need the latest and greatest, go [here](https://www.ruby-lang.org/en/downloads/). Installers for Node JS can be found [here](http://nodejs.org/download/).
 
-Bourbon
--------
-Bourbon is thoughbot's set of Sass mixins, intended to make the use of CSS3 properties faster. For more, see [Bourbon's GitHub repo](https://github.com/thoughtbot/bourbon).
+Install Jekyll (global):
+`gem install jekyll`
 
-Using Sass/Bourbon
--------------------------
-Watch Sass stylesheet and require Bourbon:
+Install SASS (global):
+`gem install sass`
 
-    sass --watch stylesheets/sass:stylesheets -r ./stylesheets/sass/bourbon/lib/bourbon.rb
+Install Grunt (global):
+`npm install -g grunt-cli`
+
+Install Grunt modules (project):
+`cd project/root-directory`
+`npm install`
+
+Watching files and running a server
+-----------------------------------
+
+`rake server`
+
+This will run a server for the project that can be accessed at [http://localhost:4000](http://localhost:4000). Changes to files will tell Jekyll to automatically rebuild the site. SASS will also run and recompile when it detects changes. Grunt will also run and recompile when it detects changes.
