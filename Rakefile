@@ -1,13 +1,14 @@
-desc 'Start Jekyll server and watching Sass/Bourbon files'
+desc 'Starting Jekyll server, watching SASS files, running Grunt.'
 task :server do
-  puts "Starting the Jekyll server and watching Sass/Bourbon files."
+  puts "Starting Jekyll server, watching SASS files, running Grunt."
   jekyllPid = Process.spawn('jekyll serve --watch')
   sassPid = Process.spawn('sass --watch css/sass:css --style compressed')
+  gruntPid = Process.spawn('grunt')
 
   trap("INT") {
-    [jekyllPid, sassPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
+    [jekyllPid, sassPid, gruntPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
     exit 0
   }
 
-  [jekyllPid, sassPid].each { |pid| Process.wait(pid) }
+  [jekyllPid, sassPid, gruntPid].each { |pid| Process.wait(pid) }
 end

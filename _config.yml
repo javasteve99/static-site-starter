@@ -3,4 +3,7 @@ exclude:
 - CNAME
 - css/sass
 - Rakefile
+- gruntfile.js
+- node_modules
+- package.json
 permalink: pretty

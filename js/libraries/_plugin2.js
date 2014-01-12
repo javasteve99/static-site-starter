@@ -1,3 +1,3 @@
-var function2 = function() {
+;(function() {
   console.log('Plugins 2 is working.');
-};
+})();
