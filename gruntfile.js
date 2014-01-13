@@ -6,24 +6,23 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'js/libraries/*.js',
-          'js/scripts/_scripts1.js',
-          'js/scripts/_scripts2.js'
+          'js/libs/*.js',
+          'js/vendor/*.js',
+          'js/modules/*.js'
         ],
-        dest: 'js/scripts.js'
+        dest: 'js/build/application.js'
       }
     },
     uglify: {
       build: {
-        src: 'js/scripts.js',
-        dest: 'js/scripts.min.js'
+        src: 'js/build/application.js',
+        dest: 'js/build/application.min.js'
       }
     },
     watch: {
       scripts: {
         files: [
-          'js/libraries/*.js',
-          'js/scripts/*.js'
+          'js/**/*.js'
         ],
         tasks: ['concat', 'uglify'],
         options: {
