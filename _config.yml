@@ -1,9 +1,14 @@
-exclude:
-- README.md
-- CNAME
-- css/sass
-- Rakefile
-- gruntfile.js
-- node_modules
-- package.json
+exclude: [
+  README.md,
+  CNAME,
+  Rakefile,
+  sass,
+  libs,
+  modules,
+  vendor,
+  gruntfile.js,
+  npm-debug.log,
+  node_modules,
+  package.json
+]
 permalink: pretty
