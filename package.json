@@ -1,7 +1,4 @@
 {
-  "name": "static-site-starter",
-  "version": "0.1.0",
-  "author": "Steve Hickey",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-concat": "~0.3.0",
