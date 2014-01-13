@@ -19,12 +19,30 @@ module.exports = function(grunt) {
         dest: 'js/build/application.min.js'
       }
     },
+    imagemin: {
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: 'img/',
+          src: ['*.{png,jpg,gif}'],
+          dest: 'img/build/'
+        }]
+      }
+    },
     watch: {
+      options: {
+        livereload: true,
+      },
       scripts: {
-        files: [
-          'js/**/*.js'
-        ],
+        files: ['js/**/*.js'],
         tasks: ['concat', 'uglify'],
+        options: {
+          spawn: false,
+        },
+      },
+      images: {
+        files: ['img/*.{png,jpg,gif}'],
+        tasks: ['imagemin'],
         options: {
           spawn: false,
         },
@@ -34,8 +52,9 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['concat', 'uglify', 'watch']);
+  grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'watch']);
 
 };
