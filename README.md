@@ -37,4 +37,4 @@ npm install
 rake server
 ```
 
-This will run a server for the project that can be accessed at [http://localhost:4000](http://localhost:4000). Changes to files will tell Jekyll to automatically rebuild the site. SASS will also run and recompile when it detects changes. Grunt will also run and recompile when it detects changes.
+This will run a server for the project that can be accessed at [http://localhost:4000](http://localhost:4000). Changes to files will tell Jekyll to automatically rebuild the site. SASS will also run and recompile to CSS when it detects changes. Grunt will also run and recompile JS and compress images when it detects changes.
