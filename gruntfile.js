@@ -3,6 +3,16 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    sass: {
+      dist: {
+        options: {
+          style: 'compressed'
+        },
+        files: {
+          'css/build/application.css': 'css/sass/application.scss'
+        }
+      }
+    },
     concat: {
       dist: {
         src: [
@@ -33,6 +43,13 @@ module.exports = function(grunt) {
       options: {
         livereload: true,
       },
+      css: {
+        files: ['css/**/*.scss'],
+        tasks: ['sass'],
+        options: {
+          spawn: false,
+        }
+      },
       scripts: {
         files: ['js/**/*.js'],
         tasks: ['concat', 'uglify'],
@@ -50,11 +67,12 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'watch']);
+  grunt.registerTask('default', ['sass', 'concat', 'uglify', 'imagemin', 'watch']);
 
 };

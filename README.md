@@ -1,6 +1,6 @@
 # Static Site Starter
 
-A skeleton for quickly starting a new static site. It includes Jekyll to generate static pages without repetition of code, SASS to facilitate rapid writing of CSS, and Grunt to concatenate and minify JS files.
+A skeleton for quickly starting a new static site. It includes Jekyll to generate static pages without repetition of code and run a web server, SASS to facilitate rapid writing of CSS, and Grunt to concatenate and minify JS files as well as compile the SASS and compress images.
 
 ## Installing Dependencies
 
@@ -37,4 +37,4 @@ npm install
 rake server
 ```
 
-This will run a server for the project that can be accessed at [http://localhost:4000](http://localhost:4000). Changes to files will tell Jekyll to automatically rebuild the site. SASS will also run and recompile to CSS when it detects changes. Grunt will also run and recompile JS and compress images when it detects changes.
+This will use Jekyll to run a server for the project that can be accessed at [http://localhost:4000](http://localhost:4000). Changes to files will tell Jekyll to automatically rebuild the site. Grunt will run and compile/compress SASS to CSS, compress images, compile/minify JS and compress images when it detects changes to any of these types of files.
