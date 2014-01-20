@@ -6,28 +6,30 @@ A skeleton for quickly starting a new static site. It includes Jekyll to generat
 
 You should have Ruby and Node JS installed for the dependencies to work. If you're running OSX you most likely have Ruby installed. If not, or if you need the latest and greatest, go [here](https://www.ruby-lang.org/en/downloads/). Installers for Node JS can be found [here](http://nodejs.org/download/).
 
-### Install Jekyll (global):
+### Installing Jekyll & SASS if using Bundler:
+
+```shell
+cd static-site-starter
+bundle install
+```
+
+### Installing Jekyll & SASS if not using Bundler:
 
 ```shell
 gem install jekyll
-```
-
-### Install SASS (global):
-
-```shell
 gem install sass
 ```
 
-### Install Grunt (global):
+### Installing Grunt:
 
 ```shell
 npm install -g grunt-cli
 ```
 
-### Install Grunt modules (project):
+### Installing Grunt modules:
 
 ```shell
-cd project/root-directory
+cd static-site-starter
 npm install
 ```
 
