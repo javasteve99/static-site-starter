@@ -9,53 +9,53 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'css/build/application.css': 'css/sass/application.scss'
+          'assets/build/css/application.css': 'assets/src/scss/application.scss'
         }
       }
     },
     concat: {
       dist: {
         src: [
-          'js/libs/*.js',
-          'js/vendor/*.js',
-          'js/modules/*.js'
+          'assets/src/js/libs/*.js',
+          'assets/src/js/vendor/*.js',
+          'assets/src/js/modules/*.js'
         ],
-        dest: 'js/build/application.js'
+        dest: 'assets/build/js/application.js'
       }
     },
     uglify: {
       build: {
-        src: 'js/build/application.js',
-        dest: 'js/build/application.min.js'
+        src: 'assets/build/js/application.js',
+        dest: 'assets/build/js/application.min.js'
       }
     },
     imagemin: {
       dynamic: {
         files: [{
           expand: true,
-          cwd: 'img/',
+          cwd: 'assets/src/img/',
           src: ['*.{png,jpg,gif}'],
-          dest: 'img/build/'
+          dest: 'assets/build/img/'
         }]
       }
     },
     watch: {
       css: {
-        files: ['css/**/*.scss'],
+        files: ['assets/src/scss/**/*.scss'],
         tasks: ['sass'],
         options: {
           spawn: false,
         }
       },
       scripts: {
-        files: ['js/**/*.js'],
+        files: ['assets/src/js/**/*.js'],
         tasks: ['concat', 'uglify'],
         options: {
           spawn: false,
         },
       },
       images: {
-        files: ['img/*.{png,jpg,gif}'],
+        files: ['assets/src/img/*.{png,jpg,gif}'],
         tasks: ['imagemin'],
         options: {
           spawn: false,
