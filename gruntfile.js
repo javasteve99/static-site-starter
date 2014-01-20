@@ -33,8 +33,7 @@ module.exports = function(grunt) {
       dynamic: {
         files: [{
           expand: true,
-          cwd: 'assets/src/img/',
-          src: ['*.{png,jpg,gif}'],
+          src: ['assets/src/img/*.{png,jpg,gif}'],
           dest: 'assets/build/img/'
         }]
       }
