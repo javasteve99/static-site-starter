@@ -1,13 +1,13 @@
 /* ============================================================================================== */
 /* Import Modules                                                                                 */
 /* ============================================================================================== */
-@import 'bourbon/bourbon';
-@import 'reset';
-@import 'variables';
-@import 'mixins';
-@import 'grid';
-@import 'type';
-@import 'forms';
+@import 'vendor/bourbon/bourbon';
+@import 'modules/reset';
+@import 'modules/variables';
+@import 'modules/mixins';
+@import 'modules/grid';
+@import 'modules/type';
+@import 'modules/forms';
 
 
 
@@ -76,4 +76,4 @@
 /* ============================================================================================== */
 /* Import Helpers Module                                                                          */
 /* ============================================================================================== */
-@import 'helpers';
+@import 'modules/helpers';
