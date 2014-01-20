@@ -36,7 +36,7 @@ npm install
 ## Watching files and running a server
 
 ```shell
-rake server
+grunt
 ```
 
 This will run a server for the project that can be accessed at [http://localhost:4000](http://localhost:4000). Changes to files will tell Jekyll/Grunt to automatically rebuild the site. Grunt will also run and compile SASS to CSS, compress images, compile/minify JS and compress images when it detects changes to any of these types of files.
