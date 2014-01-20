@@ -1,6 +1,6 @@
 # Static Site Starter
 
-A skeleton for quickly starting a new static site. It uses [Grunt](http://gruntjs.com/) to run all of the following tasks: [Jekyll](http://jekyllrb.com/) to generate static pages and run a web server, [SASS](http://sass-lang.com/)/[Bourbon](http://sass-lang.com/) to facilitate rapid CSS, and Grunt concatenates and minifies JS files, compresses images and reloads the browser when changes are detected.
+A skeleton for quickly starting a new static site. It uses [Grunt](http://gruntjs.com/) to run all of the following tasks: [Jekyll](http://jekyllrb.com/) to generate static pages and run a web server, [SASS](http://sass-lang.com/)/[Bourbon](http://bourbon.io/) to facilitate rapid CSS, and Grunt concatenates and minifies JS files, compresses images and reloads the browser when changes are detected.
 
 ## Installing Dependencies
 
