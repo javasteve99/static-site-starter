@@ -2,13 +2,11 @@ exclude: [
   README.md,
   CNAME,
   Rakefile,
-  sass,
-  libs,
-  modules,
-  vendor,
+  Gemfile,
+  Gemfile.lock,
   gruntfile.js,
   npm-debug.log,
   node_modules,
-  package.json
+  package.json,
+  src
 ]
-permalink: pretty
