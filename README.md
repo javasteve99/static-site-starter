@@ -28,7 +28,7 @@ gem install sass
 npm install
 ```
 
-## Watching files and running a server for development
+## Watching files and running a dev server
 
 ```shell
 rake serve
