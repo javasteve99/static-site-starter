@@ -38,41 +38,18 @@ module.exports = function(grunt) {
         }]
       }
     },
-    exec: {
-      serve: {
-        cmd: 'jekyll serve --watch'
-      }
-    },
     watch: {
       css: {
         files: ['assets/src/scss/**/*.scss'],
         tasks: ['sass'],
-        options: {
-          spawn: false,
-        }
       },
       js: {
         files: ['assets/src/js/**/*.js'],
         tasks: ['concat', 'uglify'],
-        options: {
-          spawn: false,
-        },
       },
       img: {
         files: ['assets/src/img/*.{png,jpg,gif}'],
         tasks: ['imagemin'],
-        options: {
-          spawn: false,
-        },
-      },
-      livereload: {
-        files: [
-          'assets/build/**/*',
-          '*.html'
-          ],
-        options: {
-          livereload: true,
-        },
       }
     }
   });
@@ -82,8 +59,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default', ['sass', 'concat', 'uglify', 'imagemin', 'exec:serve', 'watch']);
+  grunt.registerTask('default', ['sass', 'concat', 'uglify', 'imagemin', 'watch']);
+  grunt.registerTask('build', ['sass', 'concat', 'uglify', 'imagemin']);
 
 };

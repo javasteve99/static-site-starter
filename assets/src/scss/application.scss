@@ -34,11 +34,12 @@
 
 [role="banner"] {
   border-bottom: 1px solid lighten(black, 80%);
+  padding: 1em 0;
 
   h1 {
     @include heading-third;
     color: $primary;
-    margin: 0.25em 0;
+    margin-bottom: 0;
   }
 }
 
